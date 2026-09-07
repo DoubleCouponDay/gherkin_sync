@@ -39,6 +39,12 @@ Scenario: Valid login
 <ItemGroup>
   <AdditionalFiles Include="..\**\*.feature" />
 </ItemGroup>
+
+<ItemGroup>
+    <Content Include="..\..\features\**\*.feature" Link="Features\%(RecursiveDir)%(Filename)%(Extension)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+</ItemGroup>
 ```
 
 By convention, the implementation method names in Pascal Case format will match spaced, plain-text step names in the specification file.
